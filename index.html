@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9733911632452817"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For GSM - Belgesiz VoIP & Başlıklı SMS Çözümleri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- TEMEL AYARLAR --- */
+        :root {
+            --primary-color: #007BFF; /* Ana Vurgu Rengi (Mavi) */
+            --secondary-color: #0a84ff; /* İkincil Vurgu Rengi */
+            --dark-bg: #121212;         /* Koyu Arka Plan */
+            --card-bg: #1e1e1e;         /* Kart Arka Planı */
+            --text-color: #f4f4f4;      /* Ana Metin Rengi */
+            --text-muted: #aaa;         /* Soluk Metin Rengi */
+            --success-color: #25D366;   /* Başarı Rengi (WhatsApp/Yeşil) */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; color: var(--primary-color); text-align: center; margin-bottom: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* --- BUTON STİLLERİ --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* === GÜNCELLENEN HEADER & NAVİGASYON === */
+        #main-header {
+            background-color: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        /* PC'de ortalı menü için Grid kullanıldı */
+        #main-header .container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr; /* Sol (logo) | Orta (nav) | Sağ (boş/mobil menü) */
+            align-items: center;
+            width: 100%;
+        }
+
+        #main-header .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-color);
+            grid-column: 1; /* Logo 1. sütunda */
+            justify-self: start; /* Sola yasla */
+        }
+        
+        #main-header .logo span {
+            color: var(--primary-color);
+        }
+
+        #main-nav {
+            grid-column: 2; /* Nav 2. sütunda (ortada) */
+            justify-self: center; /* Ortala */
+        }
+
+        #main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        #main-nav ul li {
+            margin-left: 2rem;
+        }
+        
+        #main-nav ul li:first-child {
+             margin-left: 0;
+        }
+
+        #main-nav ul li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding-bottom: 5px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        #main-nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width .3s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        #main-nav ul li a:hover,
+        #main-nav ul li a.active {
+            color: var(--primary-color);
+        }
+
+        #main-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobil Menü (Hamburger) */
+        #menu-toggle {
+            display: none; /* Masaüstünde gizli */
+            grid-column: 3; /* 3. sütunda */
+            justify-self: end; /* Sağa yasla */
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        /* === HEADER BİTİŞİ === */
+
+
+        /* --- HERO (ANA GİRİŞ) BÖLÜMÜ --- */
+        #hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1556761175-59736f82303a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+        }
+
+        #hero h1 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            color: #f4f4f4;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- PAKETLER BÖLÜMÜ --- */
+        
+        .paket-section-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        #paketler .paket-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .paket-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            border: 2px solid var(--card-bg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        /* Gelişmiş Paketi Vurgulama */
+        .paket-card.featured {
+            border-color: var(--primary-color);
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(0, 123, 255, 0.2);
+        }
+        
+        .paket-card .paket-baslik {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .paket-card .paket-fiyat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .paket-card .paket-fiyat span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .paket-card .paket-ozellikler {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1; /* Özellik listesinin esnemesini sağlar */
+        }
+
+        .paket-card .paket-ozellikler li {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+        }
+
+        .paket-card .paket-ozellikler li i {
+            width: 25px;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        .paket-card .paket-ozellikler li.disabled {
+            color: #666;
+            text-decoration: line-through;
+        }
+        
+        .paket-card .paket-ozellikler li.disabled i {
+            color: #666;
+        }
+
+        /* === Satın Al Bölümü === */
+        .satin-al-bolumu {
+            margin-top: auto; /* Butonları en alta iter */
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+        }
+
+        /* Yeşil "Satın Al" Tetikleme Butonu */
+        .btn-satinal-trigger {
+            width: 100%;
+            background-color: var(--success-color);
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-satinal-trigger:hover {
+            background-color: #1da851; /* Koyu yeşil */
+            transform: translateY(-2px);
+        }
+        .btn-satinal-trigger i {
+            margin-right: 8px;
+        }
+
+        /* Gizlenen Ödeme Detayları Alanı */
+        .odeme-detaylari {
+            display: none; /* JavaScript ile açılacak */
+            margin-top: 1.5rem;
+        }
+
+        .satin-al-bolumu .trx-section {
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .satin-al-bolumu .trx-section p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .satin-al-bolumu .trx-section .trx-address {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            word-break: break-all;
+            margin-bottom: 10px;
+        }
+
+        .btn-copy-trx {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        
+        .btn-copy-trx:hover {
+            background: var(--secondary-color);
+        }
+        
+        .btn-odeme-yaptim {
+            background: #444;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            width: 100%;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+        .btn-odeme-yaptim:hover {
+            background: #555;
+        }
+        
+        .txid-form {
+            margin-top: 15px;
+            display: none; /* JS ile açılacak */
+        }
+        
+        .txid-input {
+            width: 100%;
+            padding: 10px;
+            background: #2a2a2a;
+            border: 1px solid #555;
+            border-radius: 5px;
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+        
+        .btn-send-txid {
+            width: 100%;
+            background: var(--success-color);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+        }
+        .btn-send-txid:hover {
+            background: #1da851;
+        }
+
+        .satin-al-bolumu .odeme-butonlari {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .satin-al-bolumu .btn-odeme {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .satin-al-bolumu .btn-odeme i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-iban {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .btn-iban:hover { background: #ddd; }
+        
+        .btn-telegram {
+            background: #2AABEE;
+            color: #fff;
+        }
+        .btn-telegram:hover { background: #228ac8; }
+        
+        .btn-whatsapp {
+            background: var(--success-color);
+            color: #fff;
+        }
+        .btn-whatsapp:hover { background: #1da851; }
+        /* === Satın Al Bölümü Bitişi === */
+
+
+        /* Tek Seferlik Paket (SMS) */
+        #sms-paket {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        #sms-paket .sms-info {
+            flex: 2;
+        }
+        
+        #sms-paket .sms-info h3 {
+            color: var(--text-color);
+        }
+        
+        #sms-paket .sms-info p {
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+        
+        #sms-paket .sms-info .sms-features {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        #sms-paket .sms-info .sms-features li {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+        
+        #sms-paket .sms-info .sms-features li i {
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+        
+        #sms-paket .sms-fiyat-odeme {
+            flex: 1;
+            text-align: right;
+            min-width: 250px;
+        }
+
+        #sms-paket .sms-fiyat {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        #sms-paket .sms-fiyat span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            display: block;
+        }
+        
+        #sms-paket .satin-al-bolumu {
+            border-top: none;
+            padding-top: 0;
+            max-width: 300px;
+            margin-left: auto;
+        }
+
+        /* --- HAKKIMIZDA BÖLÜMÜ --- */
+        #hakkimizda {
+            background: var(--card-bg);
+        }
+
+        #hakkimizda .container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        #hakkimizda .hakkimizda-img {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        #hakkimizda .hakkimizda-img img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        #hakkimizda .hakkimizda-content {
+            flex: 1.5;
+            min-width: 300px;
+        }
+        
+        #hakkimizda .hakkimizda-content h2 {
+            text-align: left; /* Bu bölümün sola dayalı kalması tasarımı (resim-yazı) korur */
+            margin-bottom: 1.5rem;
+        }
+        
+        #hakkimizda .hakkimizda-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        
+        #hakkimizda .hakkimizda-content .btn {
+            margin-top: 1rem;
+        }
+
+
+        /* === GÜNCELLENEN REFERANSLAR BÖLÜMÜ === */
+        #referanslar {
+            padding-bottom: 6rem;
+        }
+        
+        .referans-container {
+            display: flex; /* Grid'den flex'e değiştirildi */
+            overflow-x: auto; /* Yatay kaydırma eklendi */
+            gap: 2rem;
+            padding-bottom: 1.5rem; /* Kaydırma çubuğu için boşluk */
+            -webkit-overflow-scrolling: touch; /* iOS için akıcı kaydırma */
+        }
+        
+        /* Kaydırma çubuğu stilleri */
+        .referans-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .referans-container::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        .referans-container::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+        
+        .referans-card {
+            flex: 0 0 320px; /* Kartların küçülmemesi ve sabit genişlikte kalması sağlandı */
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .referans-card p.yorum {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            white-space: normal; /* Yorum metinlerinin alt satıra geçmesi için */
+        }
+        
+        .referans-card p.yorum::before {
+            content: '\f10d'; /* Font Awesome Sol Tırnak */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: absolute;
+            left: -1.5rem;
+            top: -0.5rem;
+            opacity: 0.5;
+        }
+        
+        .referans-card p.isim {
+            font-weight: 600;
+            color: var(--text-color);
+            text-align: right;
+            margin-bottom: 0;
+            white-space: normal;
+        }
+        /* === REFERANSLAR BİTİŞİ === */
+
+        /* --- İLETİŞİM BÖLÜMÜ (Footer'a entegre) --- */
+        #footer {
+            background: var(--card-bg);
+            padding: 60px 0 20px 0;
+            text-align: center;
+        }
+        
+        #footer h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        #footer .iletisim-butonlari {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        #footer .btn-iletisim {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            min-width: 240px;
+        }
+        
+        #footer .copyright {
+            margin-top: 3rem;
+            border-top: 1px solid #333;
+            padding-top: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* --- RESPONSIVE TASARIM --- */
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            
+            /* Mobil için Header'ı Flex'e geri döndür */
+            #main-header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+            
+            /* Mobil Menü Göster */
+            #menu-toggle {
+                display: block;
+                grid-column: auto; /* Grid ayarlarını sıfırla */
+                justify-self: auto;
+            }
+            
+            #main-nav {
+                display: none; /* Başlangıçta menü gizli */
+                grid-column: auto; /* Grid ayarlarını sıfırla */
+                justify-self: auto;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--card-bg);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
+            
+            #main-nav.active {
+                display: block; /* JS ile açılacak */
+            }
+
+            #main-nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            #main-nav ul li {
+                margin: 0;
+                text-align: center;
+                border-bottom: 1px solid #333;
+            }
+            
+            #main-nav ul li a {
+                display: block;
+                padding: 1.2rem;
+            }
+            
+            #main-nav ul li a:hover,
+            #main-nav ul li a::after {
+                background: none;
+                color: var(--primary-color);
+            }
+            
+            #main-nav ul li a:hover::after,
+            #main-nav ul li a.active::after {
+                width: 0; /* Mobil menüde alttaki çizgiyi kaldır */
+            }
+            
+            #main-header .logo {
+                grid-column: auto; /* Grid ayarlarını sıfırla */
+                justify-self: auto;
+            }
+
+            #hero {
+                height: 80vh;
+                padding: 0 20px;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+            
+            #hakkimizda .container {
+                flex-direction: column;
+            }
+            
+            #hakkimizda .hakkimizda-content h2 {
+                text-align: center; /* Mobilde hakkımızda yazısını ortala */
+            }
+            
+            #sms-paket {
+                text-align: center;
+            }
+            
+            #sms-paket .sms-info .sms-features {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            #sms-paket .sms-fiyat-odeme {
+                text-align: center;
+                width: 100%;
+            }
+            
+            #sms-paket .satin-al-bolumu {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .referans-card {
+                flex: 0 0 280px; /* Mobilde kartları biraz küçült */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .btn {
+                width: 100%;
+            }
+            
+            #footer .iletisim-butonlari {
+                gap: 1rem;
+            }
+            
+            #footer .btn-iletisim {
+                min-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="#" class="logo">For <span>GSM</span></a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#paketler">Paketler</a></li>
+                    <li><a href="#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="#referanslar">Referanslar</a></li>
+                    <li><a href="belgesiz-voip-rehberi.html">Blog</a></li>
+                    <li><a href="#footer">İletişim</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Belgesiz & Şirketsiz VoIP ve Başlıklı SMS Çözümleri</h1>
+            <p>For GSM ile kurumsal iletişiminizi lüks ve prestijli bir seviyeye taşıyın. Bürokrasisiz, hızlı ve güvenilir telekomünikasyon hizmetleri.</p>
+            <a href="#paketler" class="btn btn-primary">Paketleri İncele</a>
+        </div>
+    </section>
+
+    <section id="paketler">
+        <div class="container">
+            <h2>Size Özel Çözümlerimiz</h2>
+            
+            <img src="https://images.unsplash.com/photo-1611224923853-8e3c17460916?auto=format&fit=crop&w=1740&q=80" alt="Telekomünikasyon Altyapısı" class="paket-section-image">
+
+            
+            <div class="paket-container">
+                
+                <div class="paket-card">
+                    <h3 class="paket-baslik">Standart Paket</h3>
+                    <div class="paket-fiyat">15.000₺ <span>/ Aylık</span></div>
+                    <ul class="paket-ozellikler">
+                        <li><i class="fas fa-server"></i> 1 Sip Adresi</li>
+                        <li><i class="fas fa-clock"></i> 10.000 Dakika</li>
+                        <li><i class="fas fa-envelope"></i> 2.000 Sms</li>
+                        <li class="disabled"><i class="fas fa-headset"></i> Telesekreter</li>
+                        <li class="disabled"><i class="fas fa-keypad"></i> Tuşlama Özelliği</li>
+                    </ul>
+                    <div class="satin-al-bolumu">
+                        <button class="btn btn-satinal-trigger"><i class="fas fa-shopping-cart"></i> Satın Al</button>
+                        
+                        <div class="odeme-detaylari">
+                            <div class="trx-section">
+                                <p>TRX (TRC20) ile Öde</p>
+                                <div class="trx-address">TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ</div>
+                                <button class="btn-copy-trx" data-address="TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ">Adresi Kopyala</button>
+                                
+                                <button class="btn-odeme-yaptim">Ödeme Yaptım</button>
+                                <div class="txid-form">
+                                    <input type="text" class="txid-input" placeholder="TXID (İşlem Kodu) Girin">
+                                    <button class="btn-send-txid">Gönder</button>
+                                </div>
+                            </div>
+                            <div class="odeme-butonlari">
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-iban"><i class="fas fa-credit-card"></i> İban/Kredi Kartı ile Satın Al</a>
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-telegram"><i class="fab fa-telegram"></i> Telegram ile İletişim</a>
+                                <a href="https://wa.me/447488808019" target="_blank" class="btn-odeme btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ile İletişim</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="paket-card featured">
+                    <h3 class="paket-baslik">Gelişmiş Paket</h3>
+                    <div class="paket-fiyat">40.000₺ <span>/ Aylık</span></div>
+                    <ul class="paket-ozellikler">
+                        <li><i class="fas fa-server"></i> 3 Sip Adresi</li>
+                        <li><i class="fas fa-clock"></i> 50.000 Dakika</li>
+                        <li><i class="fas fa-envelope"></i> 5.000 Sms</li>
+                        <li><i class="fas fa-headset"></i> Telesekreter</li>
+                        <li class="disabled"><i class="fas fa-keypad"></i> Tuşlama Özelliği</li>
+                    </ul>
+                    <div class="satin-al-bolumu">
+                        <button class="btn btn-satinal-trigger"><i class="fas fa-shopping-cart"></i> Satın Al</button>
+                        
+                        <div class="odeme-detaylari">
+                            <div class="trx-section">
+                                <p>TRX (TRC20) ile Öde</p>
+                                <div class="trx-address">TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ</div>
+                                <button class="btn-copy-trx" data-address="TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ">Adresi Kopyala</button>
+
+                                <button class="btn-odeme-yaptim">Ödeme Yaptım</button>
+                                <div class="txid-form">
+                                    <input type="text" class="txid-input" placeholder="TXID (İşlem Kodu) Girin">
+                                    <button class="btn-send-txid">Gönder</button>
+                                </div>
+                            </div>
+                            <div class="odeme-butonlari">
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-iban"><i class="fas fa-credit-card"></i> İban/Kredi Kartı ile Satın Al</a>
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-telegram"><i class="fab fa-telegram"></i> Telegram ile İletişim</a>
+                                <a href="https://wa.me/447488808019" target="_blank" class="btn-odeme btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ile İletişim</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="paket-card">
+                    <h3 class="paket-baslik">Kurumsal Plus Paket</h3>
+                    <div class="paket-fiyat">120.000₺ <span>/ Aylık</span></div>
+                    <ul class="paket-ozellikler">
+                        <li><i class="fas fa-server"></i> 5 Sip Adresi</li>
+                        <li><i class="fas fa-clock"></i> 100.000 Dakika</li>
+                        <li><i class="fas fa-envelope"></i> 15.000 Sms</li>
+                        <li><i class="fas fa-headset"></i> Telesekreter</li>
+                        <li><i class="fas fa-keypad"></i> Tuşlama Özelliği</li>
+                    </ul>
+                    <div class="satin-al-bolumu">
+                        <button class="btn btn-satinal-trigger"><i class="fas fa-shopping-cart"></i> Satın Al</button>
+                        
+                        <div class="odeme-detaylari">
+                            <div class="trx-section">
+                                <p>TRX (TRC20) ile Öde</p>
+                                <div class="trx-address">TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ</div>
+                                <button class="btn-copy-trx" data-address="TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ">Adresi Kopyala</button>
+
+                                <button class="btn-odeme-yaptim">Ödeme Yaptım</button>
+                                <div class="txid-form">
+                                    <input type="text" class="txid-input" placeholder="TXID (İşlem Kodu) Girin">
+                                    <button class="btn-send-txid">Gönder</button>
+                                </div>
+                            </div>
+                            <div class="odeme-butonlari">
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-iban"><i class="fas fa-credit-card"></i> İban/Kredi Kartı ile Satın Al</a>
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-telegram"><i class="fab fa-telegram"></i> Telegram ile İletişim</a>
+                                <a href="https://wa.me/447488808019" target="_blank" class="btn-odeme btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ile İletişim</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div id="sms-paket">
+                <div class="sms-info">
+                    <h3 class="paket-baslik">Başlıklı SMS Tahsisi & Paneli</h3>
+                    <p>Marka bilinirliğinizi artırın. Tek seferlik ödeme ile kendi SMS panelinize ve 50.000 SMS kredisine sahip olun. Aylık ücret yok!</p>
+                    <ul class="sms-features">
+                        <li><i class="fas fa-check-circle"></i> 1 Başlık Tahsisi</li>
+                        <li><i class="fas fa-check-circle"></i> 1 Alt Başlık Tahsisi</li>
+                        <li><i class="fas fa-check-circle"></i> 50.000 SMS Kredisi</li>
+                    </ul>
+                </div>
+                <div class="sms-fiyat-odeme">
+                    <div class="sms-fiyat">75.000₺ <span>Tek Seferlik Ödeme</span></div>
+                    <div class="satin-al-bolumu">
+                        <button class="btn btn-satinal-trigger"><i class="fas fa-shopping-cart"></i> Satın Al</button>
+                        
+                        <div class="odeme-detaylari">
+                            <div class="trx-section">
+                                <p>TRX (TRC20) ile Öde</p>
+                                <div class="trx-address">TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ</div>
+                                <button class="btn-copy-trx" data-address="TVqegv15M6S4BBQ75HVMmzed5mWdgBHxEJ">Adresi Kopyala</button>
+
+                                <button class="btn-odeme-yaptim">Ödeme Yaptım</button>
+                                <div class="txid-form">
+                                    <input type="text" class="txid-input" placeholder="TXID (İşlem Kodu) Girin">
+                                    <button class="btn-send-txid">Gönder</button>
+                                </div>
+                            </div>
+                            <div class="odeme-butonlari">
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-iban"><i class="fas fa-credit-card"></i> İban/Kredi Kartı ile Satın Al</a>
+                                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn-odeme btn-telegram"><i class="fab fa-telegram"></i> Telegram ile İletişim</a>
+                                <a href="https://wa.me/447488808019" target="_blank" class="btn-odeme btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp ile İletişim</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section id="hakkimizda">
+        <div class="container">
+            <div class="hakkimizda-img">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" alt="Profesyonel Ekip">
+            </div>
+            <div class="hakkimizda-content">
+                <h2>Biz Kimiz?</h2>
+                <p><strong>For GSM</strong> olarak, iletişimde sınırları kaldırıyoruz. Belge ve karmaşık prosedürler olmadan, kurumsal kimliğinizi yansıtan prestijli VoIP ve Başlıklı SMS hizmetleri sunuyoruz.</p>
+                <p>Güvenilirlik, hız ve lüks hizmet anlayışımızla işinizi bir adım öne taşıyoruz. Müşteri odaklı yaklaşımımızla, her an yanınızdayız.</p>
+                <a href="#footer" class="btn btn-secondary">Bizimle İletişime Geçin</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="referanslar">
+        <div class="container">
+            <h2>Müşteri Yorumları</h2>
+            
+            <div class="referans-container">
+                <div class="referans-card">
+                    <p class="yorum">"For GSM'e geçtikten sonra iletişim maliyetlerimiz düştü ve müşteri memnuniyetimiz arttı. Belgesiz olması büyük kolaylık."</p>
+                    <p class="isim">- Ahmet Y. / CEO</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Başlıklı SMS hizmeti, pazarlama kampanyalarımızda devrim yarattı. Profesyonel ve hızlı destek için teşekkürler!"</p>
+                    <p class="isim">- Elif K. / Pazarlama Direktörü</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"VoIP kalitesi mükemmel. Kesintisiz ve net görüşmeler yapıyoruz. Telesekreter özelliği işimizi çok kolaylaştırdı."</p>
+                    <p class="isim">- Mehmet Ö. / Operasyon Müdürü</p>
+                </div>
+                 <div class="referans-card">
+                    <p class="yorum">"Kurulum süreci inanılmaz hızlıydı. Hiçbir evrakla uğraşmadan 1 saat içinde tüm sistemimiz aktifti. Harika!"</p>
+                    <p class="isim">- Zeynep A. / Kurucu</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Uluslararası aramalar için SIP adresi aldık. Kalite gerçekten lüks ve kesintisiz. Tam aradığımız prestij hizmeti."</p>
+                    <p class="isim">- Serkan B. / Dış Ticaret</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Tuşlama (IVR) özelliği sayesinde müşterilerimizi doğru departmana anında yönlendiriyoruz. Zaman kaybı sıfıra indi."</p>
+                    <p class="isim">- Cansu T. / Müşteri Hizmetleri</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Fiyatlar ilk başta yüksek gibi gelse de, sundukları belgesiz ve hızlı kurulum hizmeti bu bedelin karşılığını fazlasıyla veriyor."</p>
+                    <p class="isim">- Ozan G. / E-ticaret</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Telesekreter anonslarımız için profesyonel seslendirme desteği bile verdiler. Kurumsallığımız arttı."</p>
+                    <p class="isim">- Derya S. / Ajans Başkanı</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Tüm şubelerimiz arasında ücretsiz konuşuyoruz. 5 SIP adresi aldık, tek faturada yönetmek çok kolay."</p>
+                    <p class="isim">- Burak M. / Finans</p>
+                </div>
+                <div class="referans-card">
+                    <p class="yorum">"Başlıklı SMS paneli çok kullanışlı. Raporlama ekranları net ve anlaşılır. Teslimat oranları %99."</p>
+                    <p class="isim">- Emre F. / Dijital Pazarlama</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <h2>Hemen Bize Ulaşın</h2>
+            <p>Projenize özel çözümler ve anında destek için bizimle iletişime geçin.</p>
+            <div class="iletisim-butonlari">
+                <a href="https://t.me/ruzgarcanx" target="_blank" class="btn btn-iletisim btn-telegram"><i class="fab fa-telegram"></i> Telegram'dan Yazın</a>
+                <a href="https://wa.me/447488808019" target="_blank" class="btn btn-iletisim btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yazın</a>
+            </div>
+            
+            <div class="copyright">
+                © 2025 For GSM. Tüm hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        // --- Mobil Menü Toggle ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Menü linklerine tıklayınca menüyü kapat
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                // Sadece mobil menüdeyken ve # ile başlayan bir linkse kapat
+                if (window.innerWidth <= 768 && link.getAttribute('href').startsWith('#')) {
+                   mainNav.classList.remove('active');
+                }
+            });
+        });
+
+        // --- TRX Adres Kopyalama ---
+        document.querySelectorAll('.btn-copy-trx').forEach(button => {
+            button.addEventListener('click', () => {
+                const address = button.getAttribute('data-address');
+                navigator.clipboard.writeText(address).then(() => {
+                    button.innerText = 'Kopyalandı!';
+                    setTimeout(() => {
+                        button.innerText = 'Adresi Kopyala';
+                    }, 2000); // 2 saniye sonra metni geri değiştir
+                }).catch(err => {
+                    console.error('Kopyalanamadı: ', err);
+                    alert('Adres kopyalanamadı.');
+                });
+            });
+        });
+
+        
+        // --- "Ödeme Yaptım" Butonu (TXID Formunu Açar) ---
+        document.querySelectorAll('.btn-odeme-yaptim').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                const form = button.closest('.trx-section').querySelector('.txid-form');
+                
+                if (form.style.display === 'block') {
+                    form.style.display = 'none';
+                } else {
+                    form.style.display = 'block';
+                }
+            });
+        });
+
+        // --- "Gönder" Butonu (TXID'i Telegram'a Yönlendirir) ---
+        document.querySelectorAll('.btn-send-txid').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                
+                const telegramUser = 'ruzgarcanx';
+                const card = button.closest('.paket-card, #sms-paket');
+                const paketAdi = card.querySelector('.paket-baslik, h3').innerText.trim();
+                const txidInput = button.closest('.txid-form').querySelector('.txid-input');
+                const txid = txidInput.value.trim();
+
+                if (txid === '') {
+                    alert('Lütfen TXID (İşlem Kodu) girin.');
+                    txidInput.focus();
+                    return;
+                }
+
+                const message = `Merhaba! \n${paketAdi} Satın Aldım. \nTxid : ${txid}`;
+                const encodedMessage = encodeURIComponent(message);
+                const telegramURL = `https://t.me/${telegramUser}?text=${encodedMessage}`;
+                window.open(telegramURL, '_blank');
+            });
+        });
+        
+        // --- "Satın Al" Butonu Ödeme Detaylarını Açar/Kapatır ---
+        document.querySelectorAll('.btn-satinal-trigger').forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault();
+                
+                // İlgili ödeme detayları div'ini bul
+                const odemeDetaylari = button.closest('.satin-al-bolumu').querySelector('.odeme-detaylari');
+                
+                // Görünürlüğü ve buton metnini değiştir
+                if (odemeDetaylari.style.display === 'block') {
+                    odemeDetaylari.style.display = 'none';
+                    button.innerHTML = '<i class="fas fa-shopping-cart"></i> Satın Al';
+                } else {
+                    odemeDetaylari.style.display = 'block';
+                    button.innerHTML = '<i class="fas fa-times"></i> Kapat';
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
